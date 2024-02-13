@@ -26,6 +26,7 @@ alias kgu='k config get-users'
 alias kgv='k get vs'
 alias ksc='k config set-context'
 alias kuc='k config use-context'
+alias kgall='k get all'
 alias kscn='k config set-context --current --namespace'
 alias kcns='k config view --minify --output 'jsonpath={..namespace}'; echo'
 
