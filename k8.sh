@@ -29,14 +29,13 @@ alias kuc='k config use-context'
 alias kgall='k get all'
 alias kscn='k config set-context --current --namespace'
 alias kcns='k config view --minify --output 'jsonpath={..namespace}'; echo'
-
- 
+alias kshell="k run -i --rm --tty debug --image=busybox --restart=Never -- sh"
 
 # attempt to set kubectl completion
 source <(kubectl completion bash)
 complete -o default -F __start_kubectl k
 
- 
+
 
 #connect to a pod
 kpodconnect() {
