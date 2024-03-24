@@ -1,5 +1,5 @@
 # k8sh.sh -- useful kubectl aliases maintained by geoffw@nexsys.net
-# version 1.0 
+# version 1.1
 #
 # set the prompt username@hostname:[yyyy-mm-dd hh:mm:ss]-$
 export PS1="\u@\h:[\D{%Y-%m-%d %H:%M:%S}]-\\$\[$(tput sgr0)\]"
@@ -28,8 +28,8 @@ alias ksc='k config set-context'
 alias kuc='k config use-context'
 alias kgall='k get all'
 alias kscn='k config set-context --current --namespace'
-alias kcns='k config view --minify --output 'jsonpath={..namespace}'; echo'
 alias kshell="k run -i --rm --tty debug --image=busybox --restart=Never -- sh"
+alias kgns='k config view --minify -o jsonpath='{..contexts[0].context.namespace}';echo'
 
 # attempt to set kubectl completion
 source <(kubectl completion bash)
